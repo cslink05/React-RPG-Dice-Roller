@@ -13,7 +13,7 @@ class RollButton extends React.Component {
             let result = Math.floor(Math.random() * (max - min + 1)) + min;
             console.log(result);
         }
-        getRandomInt(this.props.dmin, this.props.dmax);
+        getRandomInt(this.props.minSides, this.props.maxSides);
     }
     
     render() {

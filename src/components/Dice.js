@@ -40,7 +40,11 @@ class Dice extends Component {
                     increment={this.increment}
                     decrement={this.decrement} />
                 <h3>{this.props.name}</h3>
-                <RollButton minSides={this.props.dMin} maxSides={this.props.dMax} />
+                <RollButton
+                minSides={this.props.dMin}
+                maxSides={this.props.dMax}
+                counter={this.state.counter}
+                results={this.props.results}/>
             </div>
 
         )

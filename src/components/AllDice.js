@@ -27,11 +27,11 @@ class AllDice extends Component {
         return(
             <div className="app">
                 <div className="header">
-                    <h1><i class="fas fa-dice-d20"></i>RPG Dice Roller</h1>
+                    <h1><i className="fas fa-dice-d20"></i>RPG Dice Roller</h1>
                 </div>
                 <div className="rollers">
                     <div>
-                        <h1 class="rollers__many">How many?</h1>
+                        <h1 className="rollers__many">How many?</h1>
                         <Dice name="d4" dMin={1} dMax={4} changeRoll={this.changeRoll}/>
                         <Dice name="d6" dMin={1} dMax={6} changeRoll={this.changeRoll}/>
                         <Dice name="d8" dMin={1} dMax={8} changeRoll={this.changeRoll}/>
@@ -40,10 +40,14 @@ class AllDice extends Component {
                         <Dice name="d20" dMin={1} dMax={20} changeRoll={this.changeRoll}/>
                         <Dice name="d100" dMin={1} dMax={100} changeRoll={this.changeRoll}/>  
                     </div>
-                    <div>
-                        <h1 className="result__header">Result</h1>
-                        <Results results={this.state.rollResult}/> 
-                        <button className="result__clear" onClick={this.clearRoll}>Clear</button> 
+                    <div className="result">
+                        <div className="result__top">
+                           <h1 className="result__header">Result</h1>
+                           <button className="result__clear" onClick={this.clearRoll}>Clear</button>
+                        </div>
+                        <div>
+                           <Results results={this.state.rollResult}/>  
+                        </div>
                     </div>
                 </div>
             </div>

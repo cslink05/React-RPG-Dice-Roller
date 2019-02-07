@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/React-RPG-Dice-Roller/precache-manifest.c4e80bebd9a9e14586c88e9586b6e1a0.js"
+  "/React-RPG-Dice-Roller/precache-manifest.a8e0ee74c122fed23e9434418e196d92.js"
 );
 
 workbox.clientsClaim();

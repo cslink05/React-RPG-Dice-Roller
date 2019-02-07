@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/React-RPG-Dice-Roller/static/js/runtime~main.6e10619e.js"
   },
   {
-    "revision": "238b002f0873332d10bd",
-    "url": "/React-RPG-Dice-Roller/static/js/main.238b002f.chunk.js"
+    "revision": "e2f7fcf868f7dff7a85c",
+    "url": "/React-RPG-Dice-Roller/static/js/main.e2f7fcf8.chunk.js"
   },
   {
     "revision": "fbfa9ac1c04d6f818c50",
     "url": "/React-RPG-Dice-Roller/static/js/1.fbfa9ac1.chunk.js"
   },
   {
-    "revision": "238b002f0873332d10bd",
-    "url": "/React-RPG-Dice-Roller/static/css/main.0f0e7334.chunk.css"
+    "revision": "e2f7fcf868f7dff7a85c",
+    "url": "/React-RPG-Dice-Roller/static/css/main.e20d38c0.chunk.css"
   },
   {
-    "revision": "57931251ac2f13088e5f708e5da79f98",
+    "revision": "6bcd1db12cea5f24c68db8bcd4075b0c",
     "url": "/React-RPG-Dice-Roller/index.html"
   }
 ];

@@ -34,17 +34,17 @@ class Dice extends Component {
 
     render() {
         return (
-            <div>
+            <div className="die">
                 <DiceCounter
                     counter={this.state.counter}
                     increment={this.increment}
                     decrement={this.decrement} />
-                <h3>{this.props.name}</h3>
+                <h3 className="die__name">{this.props.name}</h3>
                 <RollButton
                 minSides={this.props.dMin}
                 maxSides={this.props.dMax}
                 counter={this.state.counter}
-                results={this.props.results}/>
+                changeRoll={this.props.changeRoll}/>
             </div>
 
         )

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 class Results extends Component {
-    render(props) {
-    
+    render(){
         return (
-            <h1>hello</h1>
+            <div className="result">
+                    {this.props.results.map(roll => (
+                        <p class="result__value" key={roll}>{roll}</p>
+                    ))}
+            </div>
         )
     }
 }

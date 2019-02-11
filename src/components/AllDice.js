@@ -12,6 +12,7 @@ class AllDice extends Component {
 
     changeRoll(num) {
         this.setState({
+            //rollResult: [num + ' '].concat(this.rollResult)
             rollResult: this.state.rollResult.concat(num + ' ') 
         });
     }

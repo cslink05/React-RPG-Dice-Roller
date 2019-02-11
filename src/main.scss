@@ -1,3 +1,33 @@
+/////////////////
+//   MIXINS
+/////////////////
+
+@mixin button-shape() {
+    outline: none;
+    border: 1px solid rgb(14, 14, 14);
+    color: rgb(14, 14, 14);
+    text-shadow: 0rem -.3rem .6rem rgba(230, 230, 230, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0rem .4rem 1.3rem rgba(0, 0, 0, 0.8);
+}
+
+@mixin button-content() {
+    font-family: 'Cormorant Infant', serif;
+    font-size: 2.4rem;
+    font-weight: bold;
+    padding: .3rem .8rem;
+}
+
+@mixin flex-row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/////////////////
+//   BASE
+/////////////////
+
 * {
     margin: 0;
     padding: 0;
@@ -15,15 +45,18 @@ html {
 
 body {
     background-color: rgb(53, 53, 53);
-    background-repeat: no-repeat;
-    height: 100vh;
+    
 }
+
 .container {
     max-width: 80rem;
     margin: 0 auto;
-    text-shadow: 0rem -.2rem .6rem rgba(230, 230, 230, 0.8);
     color: white;
 }
+
+/////////////////
+//   HEADER
+/////////////////
 
 .header {
     text-align: center;
@@ -40,36 +73,36 @@ i {
     margin-right: 1rem;
 }
 
-.rollers {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-shadow: 0rem -.2rem .6rem rgba(230, 230, 230, 0.8);
+/////////////////
+//   CONTENT
+/////////////////
 
+.rollers {
+    @include flex-row();
+    
     @media only screen and (max-width: 700px) {
         flex-direction: column;
         align-items: center;
     }
 
     &__many {
-        margin-bottom: 2rem;
-        margin-left: .5rem;
-        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
 
         @media only screen and (max-width: 700px) {
-        margin-bottom: 1rem;
-        font-size: 2rem;
-        margin-left: 2rem;
-    }
+            font-size: 2rem;
+        }
     }
 }
 
+//////////////////////
+//   DICE COMPONENT
+//////////////////////
+
 .die {
-    display: flex;
-    width: 30rem;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex-row();
     align-items: center;
+    width: 30rem;
     font-size: 2.2rem;
     margin-bottom: 2.5rem;
     color: white;
@@ -79,31 +112,27 @@ i {
     }
 
     &__counter {
-        display: flex;
-        flex-direction: row;
-        width: 15rem;
+        @include flex-row();
         align-items: center;
-        justify-content: space-between;
+        width: 12rem;
         
-        
+        &__value{
+            text-align: center;
+            width: 2rem;
+        }
 
-        &__button{
-            padding: 2rem;
-            border-radius: 1rem 5rem .3rem;
-            border: 1px solid rgb(156, 199, 148);
-            outline: none;
-            background-image: linear-gradient( to top left, rgb(37, 207, 31), rgb(155, 155, 155));
-            font-size: 2.5rem;
-            box-shadow: -1rem -1rem 2.5rem -.6rem rgba(227, 252, 228, 0.773);
-            text-shadow: 0rem -.3rem .6rem rgba(230, 230, 230, 0.8);
-            color: rgb(39, 39, 39);
-
+        &__button {
+            @include button-shape();
+            background-image: linear-gradient( to top left, rgb(211, 13, 13), rgb(216, 103, 11));
+            font-size: 1.4em;
+            width: 4rem;
+            
+            &--increment {
+                background-image: linear-gradient( to top left, rgb(37, 207, 31), rgb(155, 155, 155));
+            }
+       
             @media only screen and (max-width: 700px) {
                 font-size: 1.6rem;
-            }
-
-            &--increment {
-                transform: scaleX(-1);
             }
         }
     }
@@ -113,37 +142,30 @@ i {
     }
 
     &__roll {
-        padding: 2rem;
-        border-radius: .5rem .5rem 8rem 8rem;
-        border: 1px solid rgb(156, 199, 148);
-        outline: none;
-        background-image: linear-gradient( to top, rgb(37, 207, 31), rgb(155, 155, 155));
-        font-size: 2rem;
-        box-shadow: 0 -1.2rem 2.5rem -.6rem rgba(227, 252, 228, 0.773);;
-        text-shadow: 0rem -.3rem .6rem rgba(230, 230, 230, 0.8);
-        color: rgb(39, 39, 39);
-
+        @include button-shape();
+        @include button-content();
+        background-image: linear-gradient( to top left, rgb(73, 73, 73), rgb(155, 155, 155));
+        
         @media only screen and (max-width: 700px) {
                 font-size: 1.6rem;
-            }
+        }
     }
 }
+
+//////////////////////
+//   RESULT COMPONENT
+//////////////////////
 
 .result {
     width: 30rem;
     
-    
     &__top {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex-row();
 
-       @media only screen and (max-width: 700px) {
-        
-        font-size: 2rem;
+        @media only screen and (max-width: 700px) {
+            font-size: 2rem;
+        }
     } 
-    }
-    
 
     &__header {
         border-bottom: 1px solid white;
@@ -155,24 +177,18 @@ i {
         font-size: 2.5rem;
 
         @media only screen and (max-width: 700px) {
-            font-size: 1.6rem;
+            font-size: 2rem;
             margin-bottom: .3rem;
         } 
     }
 
     &__clear {
-        border-radius: 3rem;
-        padding: .5rem 1rem; 
-        background-image: linear-gradient( to top, rgb(37, 207, 31), rgb(155, 155, 155));
-        font-size: 2rem;
-        border: 1px solid rgb(156, 199, 148);
-        outline: none;
-        box-shadow: 0 -1.2rem 2.5rem -.6rem rgba(131, 189, 134, 0.774);
-        text-shadow: 0rem -.3rem .6rem rgba(230, 230, 230, 0.8);
-        color: rgb(39, 39, 39);
+        @include button-shape();
+        @include button-content(); 
+        background-image: linear-gradient( to top left, rgb(216, 104, 0), rgb(243, 134, 44));
 
         @media only screen and (max-width: 700px) {
-            margin-top: 0;
+            font-size: 1.6rem;
         } 
     }
 }

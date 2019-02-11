@@ -126,9 +126,17 @@ i {
             background-image: linear-gradient( to top left, rgb(211, 13, 13), rgb(216, 103, 11));
             font-size: 1.4em;
             width: 4rem;
+
+            &:hover{
+                background-image: linear-gradient( to top left, rgb(145, 15, 15), rgb(216, 103, 11));
+            }
             
             &--increment {
                 background-image: linear-gradient( to top left, rgb(37, 207, 31), rgb(155, 155, 155));
+
+                &:hover{
+                    background-image: linear-gradient( to top left, rgb(26, 146, 22), rgb(155, 155, 155));
+                }
             }
        
             @media only screen and (max-width: 700px) {
@@ -145,6 +153,11 @@ i {
         @include button-shape();
         @include button-content();
         background-image: linear-gradient( to top left, rgb(73, 73, 73), rgb(155, 155, 155));
+        transition: all .4s;
+
+        &:hover{
+            background-image: linear-gradient( to top left, rgb(32, 32, 32), rgb(155, 155, 155));
+        }
         
         @media only screen and (max-width: 700px) {
                 font-size: 1.6rem;
@@ -186,6 +199,10 @@ i {
         @include button-shape();
         @include button-content(); 
         background-image: linear-gradient( to top left, rgb(216, 104, 0), rgb(243, 134, 44));
+
+        &:hover{
+            background-image: linear-gradient( to top left, rgb(168, 81, 0), rgb(243, 134, 44));
+        }
 
         @media only screen and (max-width: 700px) {
             font-size: 1.6rem;

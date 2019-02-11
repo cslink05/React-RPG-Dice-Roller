@@ -10,6 +10,7 @@ class Dice extends Component {
         this.decrement = this.decrement.bind(this);
     }
 
+    //Increase the quantity of dice being rolled
     increment() {
         this.setState({
             counter: this.state.counter + 1
@@ -21,6 +22,7 @@ class Dice extends Component {
         }
     }
 
+    //Decrease the quantity of dice being rolled
     decrement() {
         this.setState({
             counter: this.state.counter - 1
@@ -35,11 +37,13 @@ class Dice extends Component {
     render() {
         return (
             <div className="die">
+                {/* Component to increase or decrease the quantity of dice being rolled */}
                 <DiceCounter
                     counter={this.state.counter}
                     increment={this.increment}
                     decrement={this.decrement} />
                 <h3 className="die__name">{this.props.name}</h3>
+                {/* Button Component to perform the random number calculation for each individual dice */}
                 <RollButton
                 minSides={this.props.dMin}
                 maxSides={this.props.dMax}
